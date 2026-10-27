@@ -12,6 +12,8 @@
     return element;
   };
   const hobbyPaths = {
+    agent: ['M12 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z', 'M12 6v3m0 0 4 4-4 4-4-4 4-4Z', 'M8 13H4v5m12-5h4v5m-8-1v3', 'M2 18h4v4H2v-4Zm16 0h4v4h-4v-4Zm-8 2h4v3h-4v-3Z'],
+    learning: ['M8 3h8v5H8V3Zm0 13h8v5H8v-5Z', 'M16 5h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3m2-2-2 2 2 2', 'M8 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3M6 3l2 2-2 2', 'M10 11h4m-2-1v2'],
     tennis: ['M14 13l-8 8m-1-1 2 2', 'M19.5 4.5c3 3 2.5 7-.5 10s-7 3.5-10 .5-2.5-7 .5-10 7-3.5 10-.5Z', 'm10 5 9 9M8 9l7 7m-3-1 6-9m-9 6 7-8'],
     badminton: ['m4 20 4-4m-1-3 4 4m-4-4 3-10 11 11-10 3Z', 'm10 3 1 10 10 1m-6-9-4 8 8-4'],
     swimming: ['M2 20c2-2 3 2 5 0s3 2 5 0 3 2 5 0 3 2 5 0M2 16c2-2 3 2 5 0s3 2 5 0 3 2 5 0 3 2 5 0', 'm5 12 5-4 5 5m-5-5L6 4 3 6', 'M18 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z'],
@@ -78,7 +80,8 @@
     }));
     document.getElementById('interest-list').replaceChildren(...profile.interests.map(item => {
       const card = create('article', 'interest');
-      const symbol = create('div', 'interest-symbol', item.symbol);
+      const symbol = create('div', 'interest-symbol');
+      symbol.append(hobbyIcon(item.icon));
       symbol.setAttribute('aria-hidden', 'true');
       card.append(symbol, create('h3', '', item.title), create('p', '', item.description));
       return card;

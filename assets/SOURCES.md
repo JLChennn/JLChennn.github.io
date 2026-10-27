@@ -6,3 +6,5 @@
 
 University marks identify education affiliations. Their original proportions and colors are retained.
 - tencent-logo.png: Tencent official media resources, https://www.tencent.com/newsroom/media-resources/ ; blue English logo https://www.tencent.com/wp-content/uploads/2022/12/03_Tencent_English-logo.png
+- github-avatar.jpg: public GitHub avatar for JLChennn, https://avatars.githubusercontent.com/u/127013631?v=4&s=128 ; used as the website favicon.
+
