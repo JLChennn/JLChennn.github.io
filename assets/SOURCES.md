@@ -5,3 +5,4 @@
 - seu-emblem.png: Southeast University official history website, https://history.seu.edu.cn/18737/list.htm ; image https://history.seu.edu.cn/_upload/article/images/8e/c6/c786c6574363b0b3f93892761a49/78e20f58-3014-47a7-9ad5-5c9e69d248d0.png
 
 University marks identify education affiliations. Their original proportions and colors are retained.
+- tencent-logo.png: Tencent official media resources, https://www.tencent.com/newsroom/media-resources/ ; blue English logo https://www.tencent.com/wp-content/uploads/2022/12/03_Tencent_English-logo.png

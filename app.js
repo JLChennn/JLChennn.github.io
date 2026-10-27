@@ -42,7 +42,9 @@
       if (entry.logo) {
         article.classList.add('with-logo');
         const logo = create('img', 'university-logo');
-        logo.src = entry.logo; logo.alt = translated(entry.title) + (language === 'zh' ? '校徽' : ' emblem');
+        logo.src = entry.logo;
+        logo.alt = translated(entry.title) + (entry.logoType === 'company' ? ' logo' : (language === 'zh' ? '校徽' : ' emblem'));
+        if (entry.logoType === 'company') article.classList.add('company-entry');
         logo.width = 44; logo.height = 44;
         article.append(logo);
       }
@@ -64,7 +66,16 @@
     document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = window.TRANSLATIONS[lang][el.dataset.i18n]; });
     document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
     for (const [id, value] of Object.entries({ 'profile-name': profile.name, 'native-name': profile.nativeName, 'profile-role': profile.role, affiliation: profile.affiliation })) document.getElementById(id).textContent = translated(value);
-    document.getElementById('about-copy').replaceChildren(...profile.about[lang].map(p => create('p', '', p)));
+    document.getElementById('about-copy').replaceChildren(...profile.about[lang].map(parts => {
+      const paragraph = create('p');
+      for (const part of parts) {
+        if (typeof part === 'string') { paragraph.append(document.createTextNode(part)); continue; }
+        const node = create(part.href ? 'a' : part.highlight ? 'mark' : 'strong', '', part.text);
+        if (part.href) { node.href = part.href; node.target = '_blank'; node.rel = 'noopener noreferrer'; }
+        paragraph.append(node);
+      }
+      return paragraph;
+    }));
     document.getElementById('interest-list').replaceChildren(...profile.interests.map(item => {
       const card = create('article', 'interest');
       const symbol = create('div', 'interest-symbol', item.symbol);

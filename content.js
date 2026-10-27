@@ -8,8 +8,16 @@ window.PROFILE = {
   email: 'junlinchenjlc@163.com',
   photo: 'assets/portrait.jpg',
   about: {
-    en: ['I am a master’s student in Computer Science and Technology at Sichuan University and a member of IDs Lab. My research interests lie in AI agents and reinforcement learning.', 'Previously, I studied Artificial Intelligence at Southeast University from September 2022 to June 2026.'],
-    zh: ['我目前在四川大学攻读计算机科学与技术专业硕士学位，是 IDs Lab 的成员，研究兴趣主要是智能体（Agent）与强化学习（RL）。', '此前，我于 2022 年 9 月至 2026 年 6 月在东南大学人工智能专业学习。']
+    en: [
+      ['I am a ', { text: 'master’s student in Computer Science and Technology', strong: true }, ' at ', { text: 'Sichuan University', href: 'https://www.scu.edu.cn/' }, ', where I have been studying since September 2026. I am a member of ', { text: 'IDs Lab', href: 'https://ids-lab-asia.github.io/' }, '.'],
+      ['Prior to this, I completed my undergraduate studies in ', { text: 'Artificial Intelligence', strong: true }, ' at ', { text: 'Southeast University', href: 'https://www.seu.edu.cn/' }, ' in June 2026.'],
+      ['My research interests center on ', { text: 'AI agents (Agent)', highlight: true }, ' and ', { text: 'reinforcement learning (RL)', highlight: true }, '. I am interested in how intelligent agents can learn through interaction and feedback, and turn their capabilities into effective action.']
+    ],
+    zh: [
+      ['我于 2026 年 9 月进入', { text: '四川大学', href: 'https://www.scu.edu.cn/' }, '，攻读', { text: '计算机科学与技术专业硕士学位', strong: true }, '，目前是 ', { text: 'IDs Lab', href: 'https://ids-lab-asia.github.io/' }, ' 的成员。'],
+      ['此前，我于 2026 年 6 月在', { text: '东南大学', href: 'https://www.seu.edu.cn/' }, '完成', { text: '人工智能专业', strong: true }, '本科学业。'],
+      ['我的研究兴趣主要集中在', { text: '智能体（Agent）', highlight: true }, '与', { text: '强化学习（RL）', highlight: true }, '，关注智能体如何通过交互与反馈学习，并将其能力转化为有效的行动。']
+    ]
   },
   interests: [
     { symbol: '⌘', title: { en: 'AI Agents', zh: '智能体（Agent）' }, description: { en: 'Agent', zh: 'Agent' } },
@@ -20,7 +28,7 @@ window.PROFILE = {
     { title: { en: 'Southeast University', zh: '东南大学' }, logo: 'assets/seu-emblem.png', date: { en: '2022.09 — 2026.06', zh: '2022.09 — 2026.06' }, role: { en: 'Undergraduate · Artificial Intelligence', zh: '本科 · 人工智能' } }
   ],
   experience: [
-    { title: { en: 'Tencent', zh: '腾讯科技有限公司' }, date: { en: '2026.07 — 2026.09', zh: '2026.07 — 2026.09' }, role: { en: 'Algorithm Intern', zh: '算法实习生' } }
+    { title: { en: 'Tencent', zh: '腾讯科技有限公司' }, logo: 'assets/tencent-logo.png', logoType: 'company', date: { en: '2026.07 — 2026.09', zh: '2026.07 — 2026.09' }, role: { en: 'Algorithm Intern', zh: '算法实习生' } }
   ],
   news: [
     { date: '2026-09', text: { en: 'Joined Sichuan University and IDs Lab to pursue a master’s degree in Computer Science and Technology.', zh: '加入四川大学 IDs Lab，攻读计算机科学与技术专业硕士。' } },
@@ -41,7 +49,7 @@ window.PROFILE = {
 window.TRANSLATIONS = {
   en: {
     siteLabel: 'Academic homepage', photoLabel: 'YOUR PORTRAIT', email: 'Email', profileNote: 'In the age of freedom, be a blazing soul.',
-    eyebrow: 'Computer science & intelligent systems', heroTitle: 'Curiosity, built into systems.', heroSubtitle: 'Exploring intelligence. Making ideas work.', sayHello: 'Get in touch',
+    heroTitle: 'About', sayHello: 'Get in touch',
     interestsTitle: 'Research interests', educationTitle: 'Education', experienceTitle: 'Internship experience', researchTitle: 'Research & projects', publicationsTitle: 'Publications', moreTitle: 'A little more', newsTitle: 'News',
     toBeAdded: 'To be added', publicationNote: 'Space for selected publications and preprints. Add paper titles, authors, venues, and links when ready.',
     moreCopy: 'Beyond research, this is a space for the things that make you, you — interests, reading, hobbies, or a thought you would like to share. To be personalized.', closing: 'Stay curious. Build thoughtfully. Keep learning.',
@@ -50,7 +58,7 @@ window.TRANSLATIONS = {
   },
   zh: {
     siteLabel: '学术个人主页', photoLabel: '证件照待添加', email: '电子邮箱', profileNote: 'In the age of freedom, be a blazing soul.',
-    eyebrow: '计算机科学与智能系统', heroTitle: '保持好奇，让想法落地。', heroSubtitle: '探索智能，也构建真实可用的系统。', sayHello: '与我联系',
+    heroTitle: '关于我', sayHello: '与我联系',
     interestsTitle: '研究兴趣', educationTitle: '教育背景', experienceTitle: '实习经历', researchTitle: '科研与项目', publicationsTitle: '学术发表', moreTitle: '研究之外', newsTitle: '最新动态',
     toBeAdded: '待补充', publicationNote: '预留给代表性论文与预印本。后续可填写标题、作者、会议或期刊，以及论文与代码链接。',
     moreCopy: '除了研究，这里也可以记录让你成为你的那些事：兴趣、阅读、生活爱好，或想与访客分享的思考。内容待你补充。', closing: '保持好奇，认真构建，持续学习。',
