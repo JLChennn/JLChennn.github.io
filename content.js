@@ -51,18 +51,18 @@ window.TRANSLATIONS = {
     siteLabel: 'Academic homepage', photoLabel: 'YOUR PORTRAIT', email: 'Email', profileNote: 'In the age of freedom, be a blazing soul.',
     heroTitle: 'About', sayHello: 'Get in touch',
     interestsTitle: 'Research interests', educationTitle: 'Education', experienceTitle: 'Internships', researchTitle: 'Projects', publicationsTitle: 'Publications', moreTitle: 'A little more', newsTitle: 'News',
-    toBeAdded: 'To be added', publicationNote: 'Space for selected publications and preprints. Add paper titles, authors, venues, and links when ready.',
+    toBeAdded: 'To be added', comingSoon: 'To be added soon.', publicationNote: 'Space for selected publications and preprints. Add paper titles, authors, venues, and links when ready.',
     moreCopy: 'Beyond research, this is a space for the things that make you, you — interests, reading, hobbies, or a thought you would like to share. To be personalized.', closing: 'Stay curious. Build thoughtfully. Keep learning.',
     onThisPage: 'CONTENT', draftLabel: 'First design · Content draft', footerNote: 'A space for research & ideas.', backTop: 'Back to top ↑',
     nav: ['About', 'Research interests', 'Education', 'Internships', 'Projects', 'Publications', 'A little more', 'News']
   },
   zh: {
-    siteLabel: '学术个人主页', photoLabel: '证件照待添加', email: '电子邮箱', profileNote: 'In the age of freedom, be a blazing soul.',
+    siteLabel: '个人主页', photoLabel: '证件照待添加', email: '电子邮箱', profileNote: 'In the age of freedom, be a blazing soul.',
     heroTitle: '关于我', sayHello: '与我联系',
     interestsTitle: '研究兴趣', educationTitle: '教育背景', experienceTitle: '实习经历', researchTitle: '项目', publicationsTitle: '学术发表', moreTitle: '研究之外', newsTitle: '最新动态',
-    toBeAdded: '待补充', publicationNote: '预留给代表性论文与预印本。后续可填写标题、作者、会议或期刊，以及论文与代码链接。',
+    toBeAdded: '待补充', comingSoon: '快了快了', publicationNote: '预留给代表性论文与预印本。后续可填写标题、作者、会议或期刊，以及论文与代码链接。',
     moreCopy: '除了研究，这里也可以记录让你成为你的那些事：兴趣、阅读、生活爱好，或想与访客分享的思考。内容待你补充。', closing: '保持好奇，认真构建，持续学习。',
-    onThisPage: '本页目录', draftLabel: '设计初版 · 内容待完善', footerNote: '记录研究，也记录想法。', backTop: '回到顶部 ↑',
+    onThisPage: '目录', draftLabel: '设计初版 · 内容待完善', footerNote: '记录研究，也记录想法。', backTop: '回到顶部 ↑',
     nav: ['关于我', '研究兴趣', '教育背景', '实习经历', '项目', '学术发表', '研究之外', '最新动态']
   }
 };
