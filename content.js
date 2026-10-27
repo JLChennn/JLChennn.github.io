@@ -11,7 +11,7 @@ window.PROFILE = {
     en: [
       ['I am a ', { text: 'master’s student in Computer Science and Technology', strong: true }, ' at ', { text: 'Sichuan University', href: 'https://www.scu.edu.cn/' }, ', where I have been studying since September 2026. I am a member of ', { text: 'IDs Lab', href: 'https://ids-lab-asia.github.io/' }, '.'],
       ['Prior to this, I completed my undergraduate studies in ', { text: 'Artificial Intelligence', strong: true }, ' at ', { text: 'Southeast University', href: 'https://www.seu.edu.cn/' }, ' in June 2026.'],
-      ['My research interests center on ', { text: 'AI agents (Agent)', highlight: true }, ' and ', { text: 'reinforcement learning (RL)', highlight: true }, '. I am interested in how intelligent agents can learn through interaction and feedback, and turn their capabilities into effective action.']
+      ['My research interests center on ', { text: 'Agent', highlight: true }, ' and ', { text: 'Reinforcement Learning (RL)', highlight: true }, '. I am interested in how intelligent agents can learn through interaction and feedback, and turn their capabilities into effective action.']
     ],
     zh: [
       ['我于 2026 年 9 月进入', { text: '四川大学', href: 'https://www.scu.edu.cn/' }, '，攻读', { text: '计算机科学与技术专业硕士学位', strong: true }, '，目前是 ', { text: 'IDs Lab', href: 'https://ids-lab-asia.github.io/' }, ' 的成员。'],
@@ -20,7 +20,7 @@ window.PROFILE = {
     ]
   },
   interests: [
-    { icon: 'agent', title: { en: 'AI Agents', zh: '智能体（Agent）' }, description: { en: 'Agent', zh: 'Agent' } },
+    { icon: 'agent', title: { en: 'AI Agent', zh: '智能体（Agent）' }, description: { en: 'Agent Harness', zh: 'Agent Harness' } },
     { icon: 'learning', title: { en: 'Reinforcement Learning', zh: '强化学习（RL）' }, description: { en: 'RL', zh: 'RL' } }
   ],
   education: [
@@ -50,10 +50,10 @@ window.TRANSLATIONS = {
   en: {
     siteLabel: 'Academic homepage', photoLabel: 'YOUR PORTRAIT', email: 'Email', profileNote: 'In the age of freedom, be a blazing soul.',
     heroTitle: 'About', sayHello: 'Get in touch',
-    interestsTitle: 'Research interests', educationTitle: 'Education', experienceTitle: 'Internship experience', researchTitle: 'Projects', publicationsTitle: 'Publications', moreTitle: 'A little more', newsTitle: 'News',
+    interestsTitle: 'Research interests', educationTitle: 'Education', experienceTitle: 'Internships', researchTitle: 'Projects', publicationsTitle: 'Publications', moreTitle: 'A little more', newsTitle: 'News',
     toBeAdded: 'To be added', publicationNote: 'Space for selected publications and preprints. Add paper titles, authors, venues, and links when ready.',
     moreCopy: 'Beyond research, this is a space for the things that make you, you — interests, reading, hobbies, or a thought you would like to share. To be personalized.', closing: 'Stay curious. Build thoughtfully. Keep learning.',
-    onThisPage: 'On this page', draftLabel: 'First design · Content draft', footerNote: 'A space for research & ideas.', backTop: 'Back to top ↑',
+    onThisPage: 'CONTENT', draftLabel: 'First design · Content draft', footerNote: 'A space for research & ideas.', backTop: 'Back to top ↑',
     nav: ['About', 'Research interests', 'Education', 'Internships', 'Projects', 'Publications', 'A little more', 'News']
   },
   zh: {
