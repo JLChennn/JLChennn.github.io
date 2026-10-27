@@ -64,7 +64,7 @@
   function render(lang) {
     language = lang;
     document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
-    document.title = lang === 'zh' ? `${profile.name.zh} · 学术主页` : `${profile.name.en} · Academic Homepage`;
+    document.title = lang === 'zh' ? `${profile.name.zh} · 个人主页` : `${profile.name.en} · Academic Homepage`;
     document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = window.TRANSLATIONS[lang][el.dataset.i18n]; });
     document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
     for (const [id, value] of Object.entries({ 'profile-name': profile.name, 'native-name': profile.nativeName, 'profile-role': profile.role, affiliation: profile.affiliation })) document.getElementById(id).textContent = translated(value);
