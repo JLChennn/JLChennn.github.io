@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const profile = window.PROFILE;
-  const sectionIds = ['about', 'interests', 'education', 'experience', 'research', 'publications', 'more', 'news'];
+  const sectionIds = ['about', 'interests', 'education', 'experience', 'awards', 'research', 'publications', 'more', 'news'];
   let language = 'en';
   let activeId = 'about';
   const translated = value => typeof value === 'object' ? value[language] : value;
@@ -88,6 +88,7 @@
     }));
     renderTimeline('education-list', profile.education);
     renderTimeline('experience-list', profile.experience);
+    renderTimeline('awards-list', profile.awards);
     document.getElementById('news-list').replaceChildren(...[...profile.news].sort((a, b) => b.date.localeCompare(a.date)).map(item => {
       const row = create('article', 'news-item');
       const date = create('time', 'news-date', item.date.replace('-', '.'));
