@@ -1,7 +1,7 @@
 // Edit your information here. Every text field has an English and Chinese version.
 // Empty photo means the neutral portrait placeholder will be displayed.
 window.PROFILE = {
-  name: { en: 'Junlin Chen', zh: 'Junlin Chen' },
+  name: { en: 'Junlin Chen', zh: '陈俊霖' },
   nativeName: { en: '', zh: '' },
   role: { en: 'Master’s Student', zh: '计算机科学与技术 · 硕士研究生' },
   affiliation: { en: 'Sichuan University', zh: '四川大学' },
