@@ -28,7 +28,7 @@ main{min-width:0}
 .pane.hidden{display:none}
 .tl{position:relative;margin:4px 0 0 6px;border-left:1px solid #dbe3e8;padding-left:30px}
 .tl-item{position:relative;margin-bottom:30px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 3px 16px #30465205}
-.tl-item::before{content:'';position:absolute;left:-35px;top:22px;width:11px;height:11px;border-radius:50%;background:#fff;border:2.5px solid var(--mint)}
+.tl-item::before{content:'';position:absolute;left:-35px;top:25px;width:11px;height:11px;border-radius:50%;background:#fff;border:2.5px solid var(--mint)}
 .tl-item:nth-child(2)::before{border-color:var(--blue-dot)}
 .tl-item:nth-child(3)::before{border-color:var(--lav-dot)}
 .tl-media{width:236px;height:150px;border-radius:10px;object-fit:cover;flex-shrink:0;display:block;background:#eef2f4}
@@ -39,9 +39,21 @@ main{min-width:0}
 .tl-date{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
 .empty-note{font:italic 15px/1.8 Georgia,'Songti SC',SimSun,serif;color:#9aa6ae;border-left:2px solid #dbe3e8;padding:2px 0 2px 16px;margin:0 0 0 8px}
 @media(max-width:760px){
-  .top{padding:0 16px}.egg{font-size:12px;max-width:52vw}.layout{display:block;padding:84px 16px 50px}
-  .region-nav{position:static;flex-direction:row;margin:0 0 22px}.region-nav button{flex:1;text-align:center}
+  .top{flex-wrap:wrap;height:auto;min-height:64px;padding:10px 16px;gap:6px 10px}
+  .egg{width:100%;white-space:normal;overflow:visible;text-overflow:clip;font-size:12px;line-height:1.6}
+  .actions{margin-left:auto;gap:12px}
+  .layout{display:block;padding:124px 16px 50px}
+  .region-nav{position:static;flex-direction:row;margin:0 0 22px}.region-nav button{flex:1;text-align:center;padding:12px 10px}
   .tl-item{flex-direction:column}.tl-media{width:100%;height:auto}
+  .tl-text p{font-size:14px}
+}
+@media(max-width:420px){
+  .egg{font-size:11.5px}
+  .tl{padding-left:26px}
+  .tl-item::before{left:-31px}
+  .tl-item{padding:14px}
+  .tl-meta{flex-wrap:wrap;gap:8px 12px}
+  .home-link{font-size:11px}
 }
 </style>
 </head>
