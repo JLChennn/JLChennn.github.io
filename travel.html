@@ -103,6 +103,9 @@ main{min-width:0}
   // 国内为占位内容（待替换），国外暂留白。
   var DATA = {
     domestic: [
+      { img: 'assets/travel-nanjing-2022.jpg',
+        text: { en: 'I arrived in Nanjing with my family and spent all four college years here, getting to know every scenic spot and every local dish like the back of my hand.', zh: '在家人陪伴下抵达南京，在这儿度过了大学四年；景点、美食如数家珍。' },
+        place: { en: 'Nanjing · Jiangsu', zh: '南京 · 江苏' }, date: '2022.08' },
       { img: 'assets/travel-yunnan-2022.jpg',
         text: { en: 'Graduation trip — at eighteen, setting out into the world with my best friends.', zh: '毕业旅行——十八岁，和最好的朋友，出门远行。' },
         place: { en: 'Kunming · Dali · Lijiang · Yunnan', zh: '昆明 · 大理 · 丽江 · 云南' }, date: '2022.07' },
@@ -127,7 +130,9 @@ main{min-width:0}
   }
   function renderList(){
     var list = document.getElementById(region + '-list');
-    var entries = DATA[region];
+    // 按时间倒序：时间越新越靠前（占位日期 20XX.XX 视为最早，排在最后）。
+    function dateKey(s){ return String(s).replace(/X/g, '0'); }
+    var entries = DATA[region].slice().sort(function(a, b){ return dateKey(b.date).localeCompare(dateKey(a.date)); });
     var frag = document.createDocumentFragment();
     entries.forEach(function(entry, i){
       var item = document.createElement('article');
