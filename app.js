@@ -89,7 +89,14 @@
       const row = create('article', 'news-item');
       const date = create('time', 'news-date', item.date.replace('-', '.'));
       date.dateTime = item.date;
-      row.append(date, create('p', '', item.text));
+      const paragraph = create('p');
+      const names = /(Sichuan University|IDs Lab|Tencent|Southeast University|四川大学|腾讯科技有限公司|东南大学)/g;
+      for (const part of translated(item.text).split(names)) {
+        if (!part) continue;
+        if (/^(Sichuan University|IDs Lab|Tencent|Southeast University|四川大学|腾讯科技有限公司|东南大学)$/.test(part)) paragraph.append(create('mark', 'news-emphasis', part));
+        else paragraph.append(document.createTextNode(part));
+      }
+      row.append(date, paragraph);
       return row;
     }));
     document.getElementById('hobby-list').replaceChildren(...profile.hobbies.map(item => {
@@ -106,7 +113,6 @@
     markActive(activeId);
   }
   document.getElementById('email-link').href = 'mailto:' + profile.email;
-  document.getElementById('hello-link').href = 'mailto:' + profile.email;
   document.getElementById('email-link').title = profile.email;
   if (profile.photo) {
     const photo = create('img'); photo.src = profile.photo; photo.alt = 'Portrait / 个人照片';
