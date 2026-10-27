@@ -53,11 +53,11 @@ window.TRANSLATIONS = {
   en: {
     siteLabel: 'Academic homepage', photoLabel: 'YOUR PORTRAIT', email: 'Email', profileNote: 'In the age of freedom, be a blazing soul.',
     heroTitle: 'About', sayHello: 'Get in touch',
-    interestsTitle: 'Research interests', educationTitle: 'Education', experienceTitle: 'Internships', awardsTitle: 'Awards', researchTitle: 'Projects', publicationsTitle: 'Publications', moreTitle: 'A little more', newsTitle: 'News',
+    interestsTitle: 'Research Interests', educationTitle: 'Education', experienceTitle: 'Internships', awardsTitle: 'Awards', researchTitle: 'Projects', publicationsTitle: 'Publications', moreTitle: 'A little more', newsTitle: 'News',
     toBeAdded: 'To be added', comingSoon: 'To be added soon.', publicationNote: 'Space for selected publications and preprints. Add paper titles, authors, venues, and links when ready.',
     moreCopy: 'Beyond research, this is a space for the things that make you, you — interests, reading, hobbies, or a thought you would like to share. To be personalized.', closing: 'Stay curious. Build thoughtfully. Keep learning.',
     onThisPage: 'CONTENT', draftLabel: 'First design · Content draft', footerNote: 'A space for research & ideas.', backTop: 'Back to top ↑',
-    nav: ['About', 'Research interests', 'Education', 'Internships', 'Awards', 'Projects', 'Publications', 'A little more', 'News']
+    nav: ['About', 'Research Interests', 'Education', 'Internships', 'Awards', 'Projects', 'Publications', 'A little more', 'News']
   },
   zh: {
     siteLabel: '个人主页', photoLabel: '证件照待添加', email: '电子邮箱', profileNote: 'In the age of freedom, be a blazing soul.',
