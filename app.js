@@ -20,6 +20,7 @@
     fitness: ['M7 12h10M3 9v6m4-8v10M17 7v10m4-8v6M3 12h4m10 0h4'],
     hiking: ['m2 20 7-12 4 6 3-4 6 10H2Z', 'm7 11 2 3 2-3M16 10l2-5m-3 0 3-2 3 2'],
     movies: ['M3 8h18v13H3V8Zm0 0L2 3l18-2 1 5L3 8Z', 'm6 3 3 4m3-5 3 4m3-5 3 4', 'm10 12 5 3-5 3v-6Z'],
+    travel: ['M22 2 11 13', 'm22 2-7 20-4-9-9-4 20-7Z'],
     sparkles: ['m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z', 'M20 2v4m-2-2h4']
   };
   function hobbyIcon(name) {
@@ -105,7 +106,15 @@
     }));
     document.getElementById('hobby-list').replaceChildren(...profile.hobbies.map(item => {
       const hobby = create('li', 'hobby');
-      hobby.append(hobbyIcon(item.icon), create('span', '', item.label));
+      if (item.url) {
+        const link = create('a', 'hobby-link');
+        link.href = item.url;
+        link.setAttribute('aria-label', translated(item.label));
+        link.append(hobbyIcon(item.icon), create('span', '', item.label));
+        hobby.append(link);
+      } else {
+        hobby.append(hobbyIcon(item.icon), create('span', '', item.label));
+      }
       return hobby;
     }));
     document.getElementById('toc').replaceChildren(...sectionIds.map((id, index) => {

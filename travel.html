@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fa">
+<title>Travel Footprints · JLChennn</title>
+<style>
+:root{--bg:#f7f8fa;--paper:#fff;--ink:#27333d;--muted:#727d87;--line:#e6eaee;--mint:#8fb4a6;--mint-soft:#e8f2ee;--blue:#52778e;--blue-dot:#8fa9c4;--lav-dot:#b3a2c6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.8 Inter,-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.top{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;background:rgba(247,248,250,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.egg{font-family:Georgia,'Songti SC','Noto Serif SC',SimSun,serif;font-size:13.5px;letter-spacing:.4px;color:#5d6f7c;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.actions{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.home-link{font-size:12px;color:var(--blue)}.home-link:hover{text-decoration:underline;text-underline-offset:3px}
+.lang-switch{display:flex;padding:3px;border:1px solid #dfe5e9;border-radius:7px;gap:2px;background:transparent}
+.lang-switch button{border:0;background:transparent;color:var(--muted);padding:3px 11px;font-size:11px;border-radius:4px;line-height:21px}
+.lang-switch button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 4px #26364110}
+.layout{max-width:1000px;margin:0 auto;padding:98px 26px 64px;display:grid;grid-template-columns:138px minmax(0,1fr);gap:38px;align-items:start}
+.region-nav{position:sticky;top:88px;display:flex;flex-direction:column;gap:9px}
+.region-nav button{display:block;text-align:left;padding:11px 16px;border:1px solid var(--line);background:var(--paper);border-radius:9px;color:var(--muted);font-size:14px;transition:all .15s ease}
+.region-nav button:hover{border-color:#c9d6df;color:#4d6371}
+.region-nav button[aria-pressed=true]{background:var(--mint-soft);border-color:#c5ded4;color:#3d6154;font-weight:600}
+main{min-width:0}
+.pane.hidden{display:none}
+.tl{position:relative;margin:4px 0 0 6px;border-left:1px solid #dbe3e8;padding-left:30px}
+.tl-item{position:relative;margin-bottom:30px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 3px 16px #30465205}
+.tl-item::before{content:'';position:absolute;left:-35px;top:22px;width:11px;height:11px;border-radius:50%;background:#fff;border:2.5px solid var(--mint)}
+.tl-item:nth-child(2)::before{border-color:var(--blue-dot)}
+.tl-item:nth-child(3)::before{border-color:var(--lav-dot)}
+.tl-media{width:236px;height:150px;border-radius:10px;object-fit:cover;flex-shrink:0;display:block;background:#eef2f4}
+.tl-text{min-width:0}
+.tl-text p{font-size:15px;line-height:1.9;color:#45545f;margin:0 0 12px}
+.tl-meta{display:flex;gap:16px;align-items:baseline}
+.tl-place{font-size:13px;font-weight:600;color:var(--blue)}
+.tl-date{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.empty-note{font:italic 15px/1.8 Georgia,'Songti SC',SimSun,serif;color:#9aa6ae;border-left:2px solid #dbe3e8;padding:2px 0 2px 16px;margin:0 0 0 8px}
+@media(max-width:760px){
+  .top{padding:0 16px}.egg{font-size:12px;max-width:52vw}.layout{display:block;padding:84px 16px 50px}
+  .region-nav{position:static;flex-direction:row;margin:0 0 22px}.region-nav button{flex:1;text-align:center}
+  .tl-item{flex-direction:column}.tl-media{width:100%;height:auto}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <p class="egg" data-i18n="egg"></p>
+  <div class="actions">
+    <a class="home-link" data-i18n="backHome" href="index.html"></a>
+    <div class="lang-switch" role="group" aria-label="Language / 语言">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <nav class="region-nav" aria-label="Regions / 区域">
+    <button type="button" data-region="domestic" aria-pressed="true"><span data-i18n="domestic"></span></button>
+    <button type="button" data-region="overseas" aria-pressed="false"><span data-i18n="overseas"></span></button>
+  </nav>
+  <main>
+    <section id="pane-domestic" class="pane"><div class="tl" id="domestic-list"></div></section>
+    <section id="pane-overseas" class="pane hidden"><div class="tl" id="overseas-list"></div></section>
+  </main>
+</div>
+<script>
+(function(){
+  'use strict';
+  // 左上角彩蛋文案为固定中文（含中英文双版均保留原文）。
+  var I18N = {
+    en: {
+      egg: '这是一个彩蛋！——记录我用脚步丈量世界ing',
+      backHome: '← Home',
+      domestic: 'Domestic', overseas: 'Overseas',
+      empty: 'To be added',
+      alt: 'Travel footprint photo',
+      title: 'Travel Footprints · JLChennn'
+    },
+    zh: {
+      egg: '这是一个彩蛋！——记录我用脚步丈量世界ing',
+      backHome: '← 返回主页',
+      domestic: '国内', overseas: '国外',
+      empty: '待补充',
+      alt: '旅行足迹照片',
+      title: '旅行足迹记录 · JLChennn'
+    }
+  };
+  // 国内为占位内容（待替换），国外暂留白。
+  var DATA = {
+    domestic: [
+      { img: 'assets/travel-ph-1.svg',
+        text: { en: 'A placeholder stop — picture your first journey here: a quiet trail, a soft breeze, and a story worth keeping.', zh: '占位站点——想象你的第一站：一条安静的小路、一阵温柔的风，和一段值得留住的故事。' },
+        place: { en: 'Placeholder · Mountains', zh: '占位 · 山野' }, date: '20XX.XX' },
+      { img: 'assets/travel-ph-2.svg',
+        text: { en: 'Another placeholder memory — swap in a seaside day: the sound of waves and the smell of the sea breeze.', zh: '又一则占位记忆——换上一段海边时光：海浪的声音和海风的气息。' },
+        place: { en: 'Placeholder · Seaside', zh: '占位 · 海边' }, date: '20XX.XX' },
+      { img: 'assets/travel-ph-3.svg',
+        text: { en: 'One more placeholder to show the rhythm of the timeline — an old town, a slow afternoon, and bread from a corner bakery.', zh: '再来一条占位，展示时间线的节奏——一座老城、一个慢悠悠的下午，和街角面包店的新出炉面包。' },
+        place: { en: 'Placeholder · Old Town', zh: '占位 · 古城' }, date: '20XX.XX' }
+    ],
+    overseas: []
+  };
+  var lang = 'en';
+  var region = 'domestic';
+  function t(key){ return I18N[lang][key]; }
+  function render(){
+    document.documentElement.lang = lang;
+    document.title = t('title');
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ el.textContent = t(el.dataset.i18n); });
+    document.querySelectorAll('[data-lang]').forEach(function(btn){ btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)); });
+    renderList();
+  }
+  function renderList(){
+    var list = document.getElementById(region + '-list');
+    var entries = DATA[region];
+    var frag = document.createDocumentFragment();
+    entries.forEach(function(entry, i){
+      var item = document.createElement('article');
+      item.className = 'tl-item';
+      var img = document.createElement('img');
+      img.className = 'tl-media'; img.src = entry.img; img.alt = t('alt'); img.loading = 'lazy';
+      var text = document.createElement('div');
+      text.className = 'tl-text';
+      var p = document.createElement('p');
+      p.textContent = entry.text[lang];
+      var meta = document.createElement('div');
+      meta.className = 'tl-meta';
+      var place = document.createElement('span');
+      place.className = 'tl-place'; place.textContent = entry.place[lang];
+      var date = document.createElement('time');
+      date.className = 'tl-date'; date.textContent = entry.date; date.dateTime = entry.date;
+      meta.append(place, date);
+      text.append(p, meta);
+      item.append(img, text);
+      frag.append(item);
+    });
+    list.replaceChildren(frag);
+    if (entries.length === 0) {
+      var note = document.createElement('p');
+      note.className = 'empty-note';
+      note.textContent = t('empty');
+      list.append(note);
+    }
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(btn){
+    btn.addEventListener('click', function(){ lang = btn.dataset.lang; render(); });
+  });
+  document.querySelectorAll('[data-region]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      region = btn.dataset.region;
+      document.querySelectorAll('[data-region]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.region === region)); });
+      document.getElementById('pane-domestic').classList.toggle('hidden', region !== 'domestic');
+      document.getElementById('pane-overseas').classList.toggle('hidden', region !== 'overseas');
+      renderList();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>

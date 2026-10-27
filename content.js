@@ -45,6 +45,7 @@ window.PROFILE = {
     { icon: 'fitness', label: { en: 'Fitness', zh: '健身' } },
     { icon: 'hiking', label: { en: 'Hiking', zh: '徒步' } },
     { icon: 'movies', label: { en: 'Movies', zh: '电影' } },
+    { icon: 'travel', label: { en: 'Travel', zh: '旅行' }, url: 'travel.html' },
     { icon: 'sparkles', label: { en: 'Anything interesting', zh: '一切有趣的事' } }
   ]
 };
