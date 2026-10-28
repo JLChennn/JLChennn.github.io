@@ -52,7 +52,7 @@ window.PROFILE = {
 
 window.TRANSLATIONS = {
   en: {
-    siteLabel: 'Academic homepage', photoLabel: 'YOUR PORTRAIT', email: 'Email', profileNote: 'In the age of freedom, be a blazing soul.',
+    siteLabel: 'Academic homepage', photoLabel: 'YOUR PORTRAIT', email: 'Email', profileNote: 'Everything will come to you at the perfect time.',
     heroTitle: 'About', sayHello: 'Get in touch',
     interestsTitle: 'Research Interests', educationTitle: 'Education', experienceTitle: 'Internships', awardsTitle: 'Awards', researchTitle: 'Projects', publicationsTitle: 'Publications', moreTitle: 'A little more', newsTitle: 'News',
     toBeAdded: 'To be added', comingSoon: 'To be added soon.', publicationNote: 'Space for selected publications and preprints. Add paper titles, authors, venues, and links when ready.',
@@ -61,7 +61,7 @@ window.TRANSLATIONS = {
     nav: ['About', 'Research Interests', 'Education', 'Internships', 'Awards', 'Projects', 'Publications', 'A little more', 'News']
   },
   zh: {
-    siteLabel: '个人主页', photoLabel: '证件照待添加', email: '电子邮箱', profileNote: 'In the age of freedom, be a blazing soul.',
+    siteLabel: '个人主页', photoLabel: '证件照待添加', email: '电子邮箱', profileNote: '一切都会在最好的时间到来。',
     heroTitle: '关于我', sayHello: '与我联系',
     interestsTitle: '研究兴趣', educationTitle: '教育背景', experienceTitle: '实习经历', awardsTitle: '奖项', researchTitle: '项目', publicationsTitle: '学术发表', moreTitle: '研究之外', newsTitle: '最新动态',
     toBeAdded: '待补充', comingSoon: '快了快了', publicationNote: '预留给代表性论文与预印本。后续可填写标题、作者、会议或期刊，以及论文与代码链接。',
