@@ -1,7 +1,7 @@
 // Edit your information here. Every text field has an English and Chinese version.
 // Empty photo means the neutral portrait placeholder will be displayed.
 window.PROFILE = {
-  name: { en: 'Junlin Chen', zh: '陈俊霖' },
+  name: { en: 'Junlin Chen', zh: '陈郡霖' },
   nativeName: { en: '', zh: '' },
   role: { en: 'Master’s Student', zh: '计算机科学与技术 · 硕士研究生' },
   affiliation: { en: 'Sichuan University', zh: '四川大学' },
@@ -28,14 +28,17 @@ window.PROFILE = {
     { title: { en: 'Southeast University', zh: '东南大学' }, logo: 'assets/seu-emblem.png', date: { en: '2022.09 — 2026.06', zh: '2022.09 — 2026.06' }, role: { en: 'Undergraduate · Artificial Intelligence', zh: '本科 · 人工智能' } }
   ],
   experience: [
-    { title: { en: 'Tencent', zh: '腾讯科技有限公司' }, logo: 'assets/tencent-logo.png', logoType: 'company', date: { en: '2026.07 — 2026.09', zh: '2026.07 — 2026.09' }, role: { en: 'Algorithm Intern', zh: '算法实习生' } }
+    { title: { en: 'IQuest, Ubiquant', zh: '至知创新研究院，九坤量化' }, logo: 'assets/ubiquant-logo.png', logoType: 'company', date: { en: '2026.12 — Present', zh: '2026.12 — 至今' }, role: { en: 'Algorithm Intern', zh: '算法实习生' } },
+    { title: { en: 'Timi Studio, Tencent', zh: '天美工作室，腾讯科技有限公司' }, logo: 'assets/tencent-logo.png', logoType: 'company', date: { en: '2026.07 — 2026.09', zh: '2026.07 — 2026.09' }, role: { en: 'Algorithm Intern', zh: '算法实习生' } }
   ],
   awards: [
     { title: { en: 'First-Class Academic Scholarship (Top 10%)', zh: '学业一等奖学金（Top 10%）' }, date: '2026.09' }
   ],
   news: [
+    { date: '2026-12', text: { en: 'Joined IQuest (Ubiquant) as an algorithm intern.', zh: '进入至知创新研究院（九坤量化），担任算法实习生。' } },
     { date: '2026-09', text: { en: 'Joined Sichuan University and IDs Lab to pursue a master’s degree in Computer Science and Technology.', zh: '加入四川大学 IDs Lab，攻读计算机科学与技术专业硕士。' } },
     { date: '2026-07', text: { en: 'Joined Tencent as an algorithm intern.', zh: '进入腾讯科技有限公司，担任算法实习生。' } },
+    { date: '2026-06', text: { en: 'Graduated from Southeast University with a Bachelor of Engineering degree.', zh: '毕业于东南大学，取得工学学士学位。' } },
     { date: '2022-09', text: { en: 'Enrolled at Southeast University to study Artificial Intelligence.', zh: '进入东南大学人工智能专业学习。' } }
   ],
   hobbies: [
