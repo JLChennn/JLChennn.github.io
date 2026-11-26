@@ -90,15 +90,17 @@
     renderTimeline('education-list', profile.education);
     renderTimeline('experience-list', profile.experience);
     renderTimeline('awards-list', profile.awards);
+    const newsNamePattern = 'IQuest \\(Ubiquant\\)|IQuest|Ubiquant|Sichuan University|IDs Lab|Tencent|Southeast University|至知创新研究院（九坤量化）|至知创新研究院|九坤量化|四川大学|腾讯科技有限公司|东南大学';
+    const newsNameSplit = new RegExp('(' + newsNamePattern + ')', 'g');
+    const newsNameWhole = new RegExp('^(?:' + newsNamePattern + ')$');
     document.getElementById('news-list').replaceChildren(...[...profile.news].sort((a, b) => b.date.localeCompare(a.date)).map(item => {
       const row = create('article', 'news-item');
       const date = create('time', 'news-date', item.date.replace('-', '.'));
       date.dateTime = item.date;
       const paragraph = create('p');
-      const names = /(Sichuan University|IDs Lab|Tencent|Southeast University|四川大学|腾讯科技有限公司|东南大学)/g;
-      for (const part of translated(item.text).split(names)) {
+      for (const part of translated(item.text).split(newsNameSplit)) {
         if (!part) continue;
-        if (/^(Sichuan University|IDs Lab|Tencent|Southeast University|四川大学|腾讯科技有限公司|东南大学)$/.test(part)) paragraph.append(create('mark', 'news-emphasis', part));
+        if (newsNameWhole.test(part)) paragraph.append(create('mark', 'news-emphasis', part));
         else paragraph.append(document.createTextNode(part));
       }
       row.append(date, paragraph);
